@@ -16,9 +16,9 @@ using UnityEngine;
 public class BulletController : MonoBehaviour, IApplyDamage
 {
     public float verticalSpeed;
-    public float horizontalSpeed;
+    public float horizontalSpeed;                           //Indicate Horizontal Speed
     public float verticalBoundary;
-    public float horizontalBoundary;
+    public float horizontalBoundary;                        //Indicate the Horizontal bound
     public BulletManager bulletManager;
     public int damage;
     
@@ -38,7 +38,7 @@ public class BulletController : MonoBehaviour, IApplyDamage
     private void _Move()
     {
         //transform.position += new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime;
-        transform.position += new Vector3(horizontalSpeed, 0.0f,0.0f) * Time.deltaTime;
+        transform.position += new Vector3(horizontalSpeed, 0.0f,0.0f) * Time.deltaTime;     //This will use to move Bullet Horizontally
     }
 
     private void _CheckBounds()
@@ -47,7 +47,7 @@ public class BulletController : MonoBehaviour, IApplyDamage
         //{
         //    bulletManager.ReturnBullet(gameObject);
         //}
-        if (transform.position.x > horizontalBoundary)
+        if (transform.position.x > horizontalBoundary)                                      //If the Bullet goes off screen return the bullet
         {
             bulletManager.ReturnBullet(gameObject);
         }
