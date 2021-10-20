@@ -99,6 +99,19 @@ public class PlayerController : MonoBehaviour
         //    direction = -1.0f;
         //}
 
+        // keyboard support
+        if (Input.GetAxis("Vertical") >= 4.0f)
+        {
+            // direction is positive
+            direction = 1.0f;
+        }
+
+        if (Input.GetAxis("Vertical") <= -4.0f)
+        {
+            // direction is negative
+            direction = -1.0f;
+        }
+
         if (m_touchesEnded.y != 0.0f)
         {
             //transform.position = new Vector2(Mathf.Lerp(transform.position.x, m_touchesEnded.x, horizontalTValue), transform.position.y);
